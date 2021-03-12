@@ -1,9 +1,18 @@
 let computerMove = ''
+let playerMove = ''
 //randomly selects computer's choice
-let playerMove = prompt('Please choose rock, paper or sisscor: ')
-
-
-
+function playerChoice() {
+    playerMove = prompt('Please choose rock, paper or sisscor: ')
+    if ((playerMove == 'rock') 
+        || (playerMove =='paper') 
+        || (playerMove == 'sisscor')) {
+      return playerMove
+    } else{
+      alert('Not a valid choice.')
+      playerChoice()
+    }
+  }
+  
 //randomly selects computer's choice
 function computerChoice() {
     
@@ -21,8 +30,9 @@ function computerChoice() {
 }
 
 //compares player's input vs computer's choice
-function round(playerMove) {
+function round() {
     computerChoice()
+    playerChoice()
     
     alert('You\'re move is ' + playerMove + ' and the computer move is ' + computerMove + '.')
     
