@@ -1,6 +1,6 @@
 let computerMove = ''
 //randomly selects computer's choice
-let playerChoice = prompt('Please choose rock, paper or sisscor: ')
+let playerMove = prompt('Please choose rock, paper or sisscor: ')
 
 
 
@@ -21,22 +21,24 @@ function computerChoice() {
 }
 
 //compares player's input vs computer's choice
-function round(playerChoice) {
+function round(playerMove) {
     computerChoice()
-    console.log(computerMove)
-    console.log(playerChoice)
     
-    if (playerChoice == computerMove) {
-        return 'ITS A DRAW'
-    } if (playerChoice == 'rock' && computerMove == 'sisscor') {
-        return 'PLAYER WINS'
-    } if (playerChoice == 'sisscor' && computerMove == 'paper') {
-        return 'PLAYER WINS'
-    } if (playerChoice == 'paper' && computerMove == 'rock') {
-        return 'PLAYER WINS'
+    alert('You\'re move is ' + playerMove + ' and the computer move is ' + computerMove + '.')
+    
+    if (playerMove == computerMove) {
+        alert ('ITS A DRAW')
+    } else if (playerMove == 'rock' && computerMove == 'sisscor') {
+        alert ('PLAYER WINS')
+    } else if (playerMove == 'sisscor' && computerMove == 'paper') {
+        alert ('PLAYER WINS')
+    } else if (playerMove == 'paper' && computerMove == 'rock') {
+        alert ('PLAYER WINS')
     } else {
-        return 'COMPUTER WINS'
+        alert ('COMPUTER WINS')
     }
 }
+
+round(playerMove)
 
 
