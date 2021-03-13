@@ -1,11 +1,15 @@
 let computerMove = ''
 let playerMove = ''
+let playerScore = 0
+let computerScore = 0
+
+
 //randomly selects computer's choice
 function playerChoice() {
     playerMove = prompt('Please choose rock, paper or sisscor: ')
-    if ((playerMove == 'rock') 
-        || (playerMove =='paper') 
-        || (playerMove == 'sisscor')) {
+    if ((playerMove.toLowerCase() == 'rock') 
+        || (playerMove.toLowerCase() =='paper') 
+        || (playerMove.toLowerCase() == 'sisscor')) {
       return playerMove
     } else{
       alert('Not a valid choice.')
@@ -15,7 +19,7 @@ function playerChoice() {
   
 //randomly selects computer's choice
 function computerChoice() {
-    
+    computerMove = ''
     let number = Math.floor(Math.random() * 3)
     
     if (number == 0) {
@@ -31,24 +35,40 @@ function computerChoice() {
 
 //compares player's input vs computer's choice
 function round() {
+    alert('Player score is : ' + playerScore + '\nComputer score is: ' + computerScore)
     computerChoice()
     playerChoice()
     
-    alert('You\'re move is ' + playerMove + ' and the computer move is ' + computerMove + '.')
+    alert('You\'re move is ' + playerMove.toLowerCase() + ' and the computer move is ' + computerMove + '.')
+    
     
     if (playerMove == computerMove) {
         alert ('ITS A DRAW')
-    } else if (playerMove == 'rock' && computerMove == 'sisscor') {
+        return
+        
+    } if ((playerMove == 'rock' && computerMove == 'sisscor') 
+        || (playerMove == 'sisscor' && computerMove == 'paper') 
+        || (playerMove == 'paper' && computerMove == 'rock')) {
         alert ('PLAYER WINS')
-    } else if (playerMove == 'sisscor' && computerMove == 'paper') {
-        alert ('PLAYER WINS')
-    } else if (playerMove == 'paper' && computerMove == 'rock') {
-        alert ('PLAYER WINS')
+        return playerScore += 1
     } else {
         alert ('COMPUTER WINS')
+        return computerScore += 1
     }
+    
 }
 
-round(playerMove)
+//make a function to keep terack of the score
+function game() {
+    
+    round()
+    round()
+    round()
+    round()
+    round()
+    
 
+}
+
+game()
 
