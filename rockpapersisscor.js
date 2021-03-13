@@ -29,7 +29,7 @@ function computerChoice() {
     } else {
         computerMove += 'sisscor'
     }
-    w
+    
     return computerMove
 }
 
@@ -39,7 +39,7 @@ function round() {
     computerChoice()
     playerChoice()
     
-    alert('Your move is ' + playerMove.toLowerCase() + ' and the computer move is ' + computerMove + '.')
+    alert('You\'re move is ' + playerMove.toLowerCase() + ' and the computer move is ' + computerMove + '.')
     
     
     if (playerMove == computerMove) {
