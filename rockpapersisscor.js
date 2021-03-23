@@ -51,7 +51,7 @@ function round() {
         || (playerMove == 'paper' && computerMove == 'rock')) {
         alert ('PLAYER WINS')
         return playerScore += 1
-    } else {
+    } else {w
         alert ('COMPUTER WINS')
         return computerScore += 1
     }
@@ -59,16 +59,6 @@ function round() {
 }
 
 //make a function to keep terack of the score
-function game() {
-    
+while (computerScore < 5 || playerScore < 5) {
     round()
-    round()
-    round()
-    round()
-    round()
-    
-
 }
-
-game()
-
