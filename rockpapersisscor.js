@@ -51,7 +51,7 @@ function round() {
         || (playerMove == 'paper' && computerMove == 'rock')) {
         alert ('PLAYER WINS')
         return playerScore += 1
-    } else {w
+    } else {
         alert ('COMPUTER WINS')
         return computerScore += 1
     }
